@@ -1,6 +1,128 @@
-
+<!DOCTYPE html>
 <html>
-	<title>First webpage</title>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS Dropdown Menu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f0f0f0;
+      }
+
+      .menu-container {
+        background: #333;
+        padding: 1rem;
+        position: relative;
+      }
+
+      /* Hide checkbox */
+      #menu-toggle {
+        display: none;
+      }
+
+      /* Hamburger icon */
+      .hamburger {
+        width: 30px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .hamburger span {
+        background: white;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger span:nth-child(1) {
+        top: 0;
+      }
+
+      .hamburger span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .hamburger span:nth-child(3) {
+        bottom: 0;
+      }
+
+      /* When checked (active), transform hamburger into X */
+      #menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 50%;
+      }
+
+      #menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 50%;
+      }
+
+      /* Dropdown menu */
+      .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        min-width: 150px;
+        border-radius: 4px;
+        padding: 0.5rem 0;
+      }
+
+      .dropdown-menu a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .dropdown-menu a:hover {
+        background: #555;
+      }
+
+      /* Show dropdown when checkbox is checked */
+      #menu-toggle:checked ~ .dropdown-menu {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-container">
+      <input type="checkbox" id="menu-toggle">
+      <label class="hamburger" for="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <div class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    Contact
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    Mail
+    <br/>
+    globi9@proton.me
+  </body>
 </html>
